@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Brijer_glas</title>
+
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+
+  <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+  <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="bower_components/core-menu/core-menu.html">
+  <link rel="import" href="bower_components/core-item/core-item.html">
+  <link rel="import" href="bower_components/core-image/core-image.html">
+  <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+  <link rel="import" href="bower_components/core-animated-pages/transitions/slide-up.html">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body unresolved>
+  
+  <core-scaffold>
+  <core-header-panel navigation flex mode="seamed">
+    <core-toolbar>
+     <core-image sizing="contain"src="assets/images/logo.JPG" id="brandLogo"></core-image><h1>glas</h1>
+  </core-toolbar>
+    <core-menu theme="core-light-theme">
+      
+      <template repeat="{{urls}}" id="urlTemplate">
+            <core-item label="{{name}}" data-id="{{id}}" class="navItem"></core-item>
+        </template>
+      
+      
+      
+    </core-menu>
+  </core-header-panel>
+  <div tool id="pageTitle">Thuis</div>
+  <div id="content">
+    
+    
+    <core-animated-pages transitions="slide-up">
+  <section>
+    Derp!
+  </section>
+  
+  <section>
+    Yolo.
+  </section>
+</core-animated-pages>
+
+  </div>
+</core-scaffold>
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="assets/js/jquery-1.11.2.min.js"></script>
+  <script src="assets/js/pageHandler.js"></script>
+  
+</body>
+</html>
