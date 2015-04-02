@@ -15,14 +15,6 @@
     "background": {
       "scripts": ["background.js"]
     }
-  },
-  
-   "content_scripts":[{
-    "js":[
-      "jquery-1.11.2.min.js",
-      "pageHandler.js"
-      ],
-      "run_at": "document_end"
-  }]
+  }
  
 }
