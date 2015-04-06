@@ -1,7 +1,6 @@
+Polymer({
 
-    Polymer({
-
-      publish: {
+    publish: {
 
         /**
          * If true, the button will be styled with a shadow.
@@ -32,7 +31,7 @@
          */
         fill: true
 
-      }
+    }
 
-    });
+});
   

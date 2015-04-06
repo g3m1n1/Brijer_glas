@@ -2,7 +2,9 @@
 Copyright 2013 The Polymer Authors. All rights reserved.
 Use of this source code is governed by a BSD-style
 license that can be found in the LICENSE file.
---><html><head>
+-->
+<html>
+<head>
     <title>paper-icon-button</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <script src="../webcomponentsjs/webcomponents.js"></script>
@@ -11,62 +13,62 @@ license that can be found in the LICENSE file.
     <link rel="import" href="paper-icon-button.html">
 
     <style shim-shadowdom="">
-      body {
-        font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
-        font-size: 14px;
-        margin: 0;
-        padding: 24px;
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-        -webkit-touch-callout: none;
-      }
+        body {
+            font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+            font-size: 14px;
+            margin: 0;
+            padding: 24px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-touch-callout: none;
+        }
 
-      section {
-        padding: 20px 0;
-      }
+        section {
+            padding: 20px 0;
+        }
 
-      section > div {
-        padding: 14px;
-        font-size: 16px;
-      }
+        section > div {
+            padding: 14px;
+            font-size: 16px;
+        }
 
-      paper-icon-button {
-        vertical-align: middle;
-      }
+        paper-icon-button {
+            vertical-align: middle;
+        }
 
-      paper-icon-button.hover:hover {
-        background: #eee;
-        border-radius: 50%;
-      }
+        paper-icon-button.hover:hover {
+            background: #eee;
+            border-radius: 50%;
+        }
 
-      paper-icon-button.red {
-        color: #fe774d;
-      }
+        paper-icon-button.red {
+            color: #fe774d;
+        }
 
-      paper-icon-button.blueRipple::shadow #ripple {
-        color: #4285f4;
-      }
+        paper-icon-button.blueRipple::shadow #ripple {
+            color: #4285f4;
+        }
 
-      paper-icon-button.huge::shadow #icon {
-        width: 100px;
-        height: 100px;
-      }
+        paper-icon-button.huge::shadow #icon {
+            width: 100px;
+            height: 100px;
+        }
 
-/*      core-selector paper-icon-button:not([active])::shadow core-icon {
-        color: #c9c9c9;
-      }
-*/
-      paper-icon-button.custom {
-        color: #a9edff;
-      }
+        /*      core-selector paper-icon-button:not([active])::shadow core-icon {
+                color: #c9c9c9;
+              }
+        */
+        paper-icon-button.custom {
+            color: #a9edff;
+        }
     </style>
 
-  </head>
+</head>
 
-  <body unresolved="" onclick="clickAction(event);">
+<body unresolved="" onclick="clickAction(event);">
 
-    <column>
+<column>
 
-      <section>
+    <section>
 
         <div>Icon buttons</div>
 
@@ -75,11 +77,11 @@ license that can be found in the LICENSE file.
         <paper-icon-button icon="arrow-forward" title="arrow-forward"></paper-icon-button>
         <paper-icon-button disabled="" icon="clear" title="clear"></paper-icon-button>
 
-      </section>
+    </section>
 
-      <br>
+    <br>
 
-      <section>
+    <section>
 
         <div>Styled</div>
 
@@ -91,45 +93,46 @@ license that can be found in the LICENSE file.
 
         <paper-icon-button class="huge" icon="favorite" title="huge"></paper-icon-button>
 
-      </section>
+    </section>
 
-      <section>
+    <section>
 
         <div>Link</div>
 
         <a href="https://www.polymer-project.org" target="_blank">
-          <paper-icon-button icon="polymer" title="polymer"></paper-icon-button>
+            <paper-icon-button icon="polymer" title="polymer"></paper-icon-button>
         </a>
 
-      </section>
+    </section>
 
-<!--       <section>
-        <span>focused</span>
-        <paper-icon-button focused icon="social:cake"></paper-icon-button>
-        <paper-icon-button focused icon="social:plus-one"></paper-icon-button>
-      </section>
- -->
-<!--       <section>
-        <span>segmented</span>
-        <core-selector selected="1">
-          <paper-icon-button fill isToggle icon="maps:directionswalk"></paper-icon-button>
-          <paper-icon-button fill isToggle icon="maps:directions-bike"></paper-icon-button>
-          <paper-icon-button fill isToggle icon="maps:directions-transit"></paper-icon-button>
-          <paper-icon-button fill isToggle icon="maps:directions-car"></paper-icon-button>
-        </core-selector>
-      </section>
- -->
-      <section>
+    <!--       <section>
+            <span>focused</span>
+            <paper-icon-button focused icon="social:cake"></paper-icon-button>
+            <paper-icon-button focused icon="social:plus-one"></paper-icon-button>
+          </section>
+     -->
+    <!--       <section>
+            <span>segmented</span>
+            <core-selector selected="1">
+              <paper-icon-button fill isToggle icon="maps:directionswalk"></paper-icon-button>
+              <paper-icon-button fill isToggle icon="maps:directions-bike"></paper-icon-button>
+              <paper-icon-button fill isToggle icon="maps:directions-transit"></paper-icon-button>
+              <paper-icon-button fill isToggle icon="maps:directions-car"></paper-icon-button>
+            </core-selector>
+          </section>
+     -->
+    <section>
 
         <div>Custom icon src</div>
 
-        <paper-icon-button class="custom" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" aria-label="octocat" title="octocat"></paper-icon-button>
+        <paper-icon-button class="custom" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"
+                           aria-label="octocat" title="octocat"></paper-icon-button>
 
-      </section>
-    </column>
+    </section>
+</column>
 
-    <script src="demo.html.0.js"></script>
+<script src="demo.html.0.js"></script>
 
-  
 
-</body></html>
+</body>
+</html>

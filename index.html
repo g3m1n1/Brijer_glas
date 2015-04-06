@@ -1,69 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brijer_glas</title>
+    <title>Brijer_glas</title>
 
-  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
-  <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
-  <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
-  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-  <link rel="import" href="bower_components/core-menu/core-menu.html">
-  <link rel="import" href="bower_components/core-item/core-item.html">
-  <link rel="import" href="bower_components/core-image/core-image.html">
-  <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
-  <link rel="import" href="bower_components/core-animated-pages/transitions/slide-up.html">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+    <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="bower_components/core-menu/core-menu.html">
+    <link rel="import" href="bower_components/core-item/core-item.html">
+    <link rel="import" href="bower_components/core-image/core-image.html">
+    <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+    <link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-bottom.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/core-ajax/core-ajax.html">
+
+    <!-- Custom components -->
+    <link rel="import" href="custom_components/navigation-item.html">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 
 <body unresolved>
-  
-  <core-scaffold>
-  <core-header-panel navigation flex mode="seamed">
-    <core-toolbar>
-     <core-image sizing="contain"src="assets/images/logo.JPG" id="brandLogo"></core-image><h1>glas</h1>
-  </core-toolbar>
-    <core-menu theme="core-light-theme">
-      
-      <template repeat="{{urls}}" id="urlTemplate">
-            <core-item label="{{name}}" data-id="{{id}}" class="navItem"></core-item>
-        </template>
-      
-      
-      
-    </core-menu>
-  </core-header-panel>
-  <div tool id="pageTitle">Thuis</div>
-  <div id="content">
-    
-    
-    <core-animated-pages transitions="slide-up">
-  <section>
-    Derp!
-  </section>
-  
-  <section>
-    Yolo.
-  </section>
-</core-animated-pages>
 
-  </div>
+<core-scaffold>
+    <core-header-panel navigation flex mode="seamed">
+        <core-toolbar>
+            <core-image sizing="contain" src="assets/images/logo.JPG" id="brandLogo"></core-image>
+            <h1>glas</h1>
+        </core-toolbar>
+        <core-menu theme="core-light-theme">
+
+            <template repeat="{{urls}}" id="urlTemplate">
+                <navigation-item pagename="{{name}}" pageid="{{id}}">{{name}}</navigation-item>
+            </template>
+
+
+        </core-menu>
+    </core-header-panel>
+    <div tool id="pageTitle">Thuis</div>
+    <div id="content">
+
+
+        <core-animated-pages transitions="slide-from-bottom">
+            <section> <!-- Thuis -->
+                <p>Welkom bij Brijer Glas!</p>
+            </section>
+
+            <section id="login_page"> <!-- Login -->
+
+                <form action=""> <!-- Login form -->
+                    <paper-input-decorator floatingLabel="" label="Gebruikers naam">
+                        <input is="core-input" type="text" name="login_username"/>
+                    </paper-input-decorator>
+                    <paper-input-decorator floatingLabel="" label="WachtWoord">
+                        <input is="core-input" type="password" name="login_password"/>
+                    </paper-input-decorator>
+                    <paper-button raised="" id="loginButton">Login</paper-button>
+                </form>
+
+                <!-- Post login info to server using AJAX -->
+                <core-ajax id="loginAjax" url="http://localhost:8080/Brijer_glas_api/login" handleAs="text" params='{"username": "g3mini", "password": "password"}' method="post"></core-ajax>
+            </section>
+
+            <section> <!-- Contact -->
+                <a href="tel:31620792649">Tel: +31620792649</a>
+            </section>
+        </core-animated-pages>
+
+    </div>
 </core-scaffold>
 
 
+<script src="assets/js/pageHandler.js"></script>
+<script src="assets/js/loginHandler.js"></script>
 
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  <script src="assets/js/pageHandler.js"></script>
-  
 </body>
 </html>

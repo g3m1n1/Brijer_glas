@@ -1,6 +1,4 @@
-
-
-  Polymer({
+Polymer({
 
     publish: {
 
@@ -36,28 +34,28 @@
     tokens: null,
 
     observe: {
-      rows: 'updateCached',
-      maxRows: 'updateCached'
+        rows: 'updateCached',
+        maxRows: 'updateCached'
     },
 
-    constrain: function(tokens) {
-      var _tokens;
-      tokens = tokens || [''];
-      // Enforce the min and max heights for a multiline input to avoid measurement
-      if (this.maxRows > 0 && tokens.length > this.maxRows) {
-        _tokens = tokens.slice(0, this.maxRows);
-      } else {
-        _tokens = tokens.slice(0);
-      }
-      while (this.rows > 0 && _tokens.length < this.rows) {
-        _tokens.push('');
-      }
-      return _tokens.join('<br>') + '&nbsp;';
+    constrain: function (tokens) {
+        var _tokens;
+        tokens = tokens || [''];
+        // Enforce the min and max heights for a multiline input to avoid measurement
+        if (this.maxRows > 0 && tokens.length > this.maxRows) {
+            _tokens = tokens.slice(0, this.maxRows);
+        } else {
+            _tokens = tokens.slice(0);
+        }
+        while (this.rows > 0 && _tokens.length < this.rows) {
+            _tokens.push('');
+        }
+        return _tokens.join('<br>') + '&nbsp;';
     },
 
-    valueForMirror: function(input) {
-      this.tokens = (input && input.value) ? input.value.replace(/&/gm, '&amp;').replace(/"/gm, '&quot;').replace(/'/gm, '&#39;').replace(/</gm, '&lt;').replace(/>/gm, '&gt;').split('\n') : [''];
-      return this.constrain(this.tokens);
+    valueForMirror: function (input) {
+        this.tokens = (input && input.value) ? input.value.replace(/&/gm, '&amp;').replace(/"/gm, '&quot;').replace(/'/gm, '&#39;').replace(/</gm, '&lt;').replace(/>/gm, '&gt;').split('\n') : [''];
+        return this.constrain(this.tokens);
     },
 
     /**
@@ -68,17 +66,17 @@
      * @method update
      * @param Element The input
      */
-    update: function(input) {
-      this.$.mirror.innerHTML = this.valueForMirror(input);
+    update: function (input) {
+        this.$.mirror.innerHTML = this.valueForMirror(input);
     },
 
-    updateCached: function() {
-      this.$.mirror.innerHTML = this.constrain(this.tokens);
+    updateCached: function () {
+        this.$.mirror.innerHTML = this.constrain(this.tokens);
     },
 
-    inputAction: function(e) {
-      this.update(e.target);
+    inputAction: function (e) {
+        this.update(e.target);
     }
 
-  });
+});
 

@@ -59,53 +59,59 @@ you should ensure that the `aria-label` attribute is set.
 @element paper-icon-button
 @extends paper-button-base
 @homepage github.io
---><html><head><link href="../polymer/polymer.html" rel="import">
-<link href="../core-icon/core-icon.html" rel="import">
-<link href="../core-icons/core-icons.html" rel="import">
-<link href="../paper-button/paper-button-base.html" rel="import">
-<link href="../paper-ripple/paper-ripple.html" rel="import">
+-->
+<html>
+<head>
+    <link href="../polymer/polymer.html" rel="import">
+    <link href="../core-icon/core-icon.html" rel="import">
+    <link href="../core-icons/core-icons.html" rel="import">
+    <link href="../paper-button/paper-button-base.html" rel="import">
+    <link href="../paper-ripple/paper-ripple.html" rel="import">
 
-</head><body><polymer-element name="paper-icon-button" extends="paper-button-base" attributes="src icon" role="button">
+</head>
+<body>
+<polymer-element name="paper-icon-button" extends="paper-button-base" attributes="src icon" role="button">
 
-  <template>
+    <template>
 
-    <style>
-      :host {
-        display: inline-block;
-        position: relative;
-        padding: 8px;
-        outline: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        cursor: pointer;
-        z-index: 0;
-      }
+        <style>
+            :host {
+                display: inline-block;
+                position: relative;
+                padding: 8px;
+                outline: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                cursor: pointer;
+                z-index: 0;
+            }
 
-      :host([disabled]) {
-        color: #c9c9c9;
-        pointer-events: none;
-        cursor: auto;
-      }
+            :host([disabled]) {
+                color: #c9c9c9;
+                pointer-events: none;
+                cursor: auto;
+            }
 
-      #ripple {
-        pointer-events: none;
-        z-index: -1;
-      }
+            #ripple {
+                pointer-events: none;
+                z-index: -1;
+            }
 
-      #icon {
-        display: block;
-        pointer-events: none;
-      }
-    </style>
+            #icon {
+                display: block;
+                pointer-events: none;
+            }
+        </style>
 
-    <!-- to position to ripple behind the icon -->
-    <core-icon relative="" id="icon" src="{{src}}" icon="{{icon}}"></core-icon>
+        <!-- to position to ripple behind the icon -->
+        <core-icon relative="" id="icon" src="{{src}}" icon="{{icon}}"></core-icon>
 
-  </template>
+    </template>
 
-  <script src="paper-icon-button.html.0.js"></script>
+    <script src="paper-icon-button.html.0.js"></script>
 
 </polymer-element>
-</body></html>
+</body>
+</html>

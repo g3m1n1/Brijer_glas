@@ -1,6 +1,5 @@
-
-    WCT.loadSuites([
-      'basic.html',
-      'a11y.html'
-    ]);
+WCT.loadSuites([
+    'basic.html',
+    'a11y.html'
+]);
   

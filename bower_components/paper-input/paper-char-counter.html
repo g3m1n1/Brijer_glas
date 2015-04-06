@@ -26,38 +26,44 @@ Theming
 @group Paper Elements
 @element paper-char-counter
 @homepage github.io
---><html><head><link href="../polymer/polymer.html" rel="import">
-<link href="../core-style/core-style.html" rel="import">
+-->
+<html>
+<head>
+    <link href="../polymer/polymer.html" rel="import">
+    <link href="../core-style/core-style.html" rel="import">
 
-</head><body><core-style id="paper-char-counter">
-:host(.invalid) {
-  color: {{g.paperInput.invalidColor}};
-}
+</head>
+<body>
+<core-style id="paper-char-counter">
+    :host(.invalid) {
+    color: {{g.paperInput.invalidColor}};
+    }
 </core-style>
 
 <polymer-element name="paper-char-counter">
 
-<template>
+    <template>
 
-  <style>
-    :host {
-      display: inline-block;
-      float: right;
-      color: #757575;
-      font-size: 0.75em;
-      padding: 0.5em 0 0.5em 0.5em;
-    }
-  </style>
+        <style>
+            :host {
+                display: inline-block;
+                float: right;
+                color: #757575;
+                font-size: 0.75em;
+                padding: 0.5em 0 0.5em 0.5em;
+            }
+        </style>
 
-  <core-style ref="paper-char-counter"></core-style>
+        <core-style ref="paper-char-counter"></core-style>
 
-  <div class="counter-text" aria-hidden="true" hidden?="{{!showCounter || !_maxChars}}">
-    <span>{{_charCount}} / {{_maxChars}}</span>
-  </div>
+        <div class="counter-text" aria-hidden="true" hidden?="{{!showCounter || !_maxChars}}">
+            <span>{{_charCount}} / {{_maxChars}}</span>
+        </div>
 
-</template>
+    </template>
 
-<script src="paper-char-counter.html.0.js"></script>
+    <script src="paper-char-counter.html.0.js"></script>
 
 </polymer-element>
-</body></html>
+</body>
+</html>

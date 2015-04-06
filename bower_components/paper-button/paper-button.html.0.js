@@ -1,7 +1,6 @@
+Polymer({
 
-    Polymer({
-
-      publish: {
+    publish: {
 
         /**
          * If true, the button will be styled with a shadow.
@@ -32,23 +31,23 @@
          */
         fill: true
 
-      },
+    },
 
-      _activate: function() {
+    _activate: function () {
         this.click();
         this.fire('tap');
         if (!this.pressed) {
-          var bcr = this.getBoundingClientRect();
-          var x = bcr.left + (bcr.width / 2);
-          var y = bcr.top + (bcr.height / 2);
-          this.downAction({x: x, y: y});
-          var fn = function fn() {
-            this.upAction();
-            this.removeEventListener('keyup', fn);
-          }.bind(this);
-          this.addEventListener('keyup', fn);
+            var bcr = this.getBoundingClientRect();
+            var x = bcr.left + (bcr.width / 2);
+            var y = bcr.top + (bcr.height / 2);
+            this.downAction({x: x, y: y});
+            var fn = function fn() {
+                this.upAction();
+                this.removeEventListener('keyup', fn);
+            }.bind(this);
+            this.addEventListener('keyup', fn);
         }
-      }
+    }
 
-    });
+});
   

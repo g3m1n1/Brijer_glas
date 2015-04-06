@@ -1,6 +1,5 @@
-
-    Polymer({
-      publish: {
+Polymer({
+    publish: {
         /**
          * An offset from 0 to 1.
          *
@@ -8,17 +7,17 @@
          * @type Number
          */
         offset: {value: null, reflect: true}
-      },
-      get properties() {
+    },
+    get properties() {
         var props = {};
         var children = this.querySelectorAll('core-animation-prop');
-        Array.prototype.forEach.call(children, function(c) {
-          props[c.name] = c.value;
+        Array.prototype.forEach.call(children, function (c) {
+            props[c.name] = c.value;
         });
         if (this.offset !== null) {
-          props.offset = this.offset;
+            props.offset = this.offset;
         }
         return props;
-      }
-    });
+    }
+});
   

@@ -1,18 +1,16 @@
-
-
-    function clickAction(e) {
-      var t = e.target;
-      if (t.localName === 'paper-button') {
+function clickAction(e) {
+    var t = e.target;
+    if (t.localName === 'paper-button') {
         if (t.hasAttribute('disabled')) {
-          console.error('should not be able to click disabled button', t);
+            console.error('should not be able to click disabled button', t);
         } else {
-          console.log('click', t);
+            console.log('click', t);
         }
-      }
     }
+}
 
-    addEventListener('template-bound', function(e) {
-      e.target.clickAction = clickAction;
-    });
+addEventListener('template-bound', function (e) {
+    e.target.clickAction = clickAction;
+});
 
   

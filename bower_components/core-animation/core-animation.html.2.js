@@ -1,6 +1,5 @@
-
-    Polymer({
-      publish: {
+Polymer({
+    publish: {
         /**
          * A CSS property name.
          *
@@ -16,6 +15,6 @@
          * @type string|number
          */
         value: {value: '', reflect: true}
-      }
-    });
+    }
+});
   

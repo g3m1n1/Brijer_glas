@@ -1,15 +1,13 @@
+Polymer('x-dialog', {
 
+    ready: function () {
+        this.$.overlay.target = this;
+    },
 
-	Polymer('x-dialog', {
-	
-		ready: function() {
-			this.$.overlay.target = this;
-		},
+    toggle: function () {
+        this.$.overlay.toggle();
+    }
 
-		toggle: function() {
-			this.$.overlay.toggle();
-		}
-
-	});
+});
 
 	

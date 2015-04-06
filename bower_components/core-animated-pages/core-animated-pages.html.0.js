@@ -1,9 +1,7 @@
-
-
-  Polymer(Polymer.mixin({
+Polymer(Polymer.mixin({
 
     eventDelegates: {
-      'core-transitionend': 'transitionEnd'
+        'core-transitionend': 'transitionEnd'
     },
 
     /**
@@ -29,181 +27,181 @@
      */
     lastSelected: null,
 
-    registerCallback: function() {
-      this.tmeta = document.createElement('core-transition');
+    registerCallback: function () {
+        this.tmeta = document.createElement('core-transition');
     },
 
-    created: function() {
-      this._transitions = [];
-      this.transitioning = [];
+    created: function () {
+        this._transitions = [];
+        this.transitioning = [];
     },
 
-    attached: function() {
-      this.resizerAttachedHandler();
+    attached: function () {
+        this.resizerAttachedHandler();
     },
 
-    detached: function() {
-      this.resizerDetachedHandler();
+    detached: function () {
+        this.resizerDetachedHandler();
     },
 
-    transitionsChanged: function() {
-      this._transitions = this.transitions.split(' ');
+    transitionsChanged: function () {
+        this._transitions = this.transitions.split(' ');
     },
 
-    _transitionsChanged: function(old) {
-      if (this._transitionElements) {
-        this._transitionElements.forEach(function(t) {
-          t.teardown(this);
+    _transitionsChanged: function (old) {
+        if (this._transitionElements) {
+            this._transitionElements.forEach(function (t) {
+                t.teardown(this);
+            }, this);
+        }
+        this._transitionElements = [];
+        this._transitions.forEach(function (transitionId) {
+            var t = this.getTransition(transitionId);
+            if (t) {
+                this._transitionElements.push(t);
+                t.setup(this);
+            }
         }, this);
-      }
-      this._transitionElements = [];
-      this._transitions.forEach(function(transitionId) {
-        var t = this.getTransition(transitionId);
-        if (t) {
-          this._transitionElements.push(t);
-          t.setup(this);
+    },
+
+    getTransition: function (transitionId) {
+        return this.tmeta.byId(transitionId);
+    },
+
+    selectionSelect: function (e, detail) {
+        this.updateSelectedItem();
+        // Wait to call applySelection when we run the transition
+    },
+
+    applyTransition: function (src, dst) {
+        if (this.animating) {
+            this.cancelAsync(this.animating);
+            this.animating = null;
         }
-      }, this);
-    },
 
-    getTransition: function(transitionId) {
-      return this.tmeta.byId(transitionId);
-    },
-
-    selectionSelect: function(e, detail) {
-      this.updateSelectedItem();
-      // Wait to call applySelection when we run the transition
-    },
-
-    applyTransition: function(src, dst) {
-      if (this.animating) {
-        this.cancelAsync(this.animating);
-        this.animating = null;
-      }
-
-      Polymer.flush();
-
-      if (this.transitioning.indexOf(src) === -1) {
-        this.transitioning.push(src);
-      }
-      if (this.transitioning.indexOf(dst) === -1) {
-        this.transitioning.push(dst);
-      }
-      // force src, dst to display 
-      src.setAttribute('animate', '');
-      dst.setAttribute('animate', '');
-      //
-      var options = {
-        src: src,
-        dst: dst,
-        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
-      };
-
-      // fire an event so clients have a chance to do something when the
-      // new page becomes visible but before it draws.
-      this.fire('core-animated-pages-transition-prepare');
-
-      //
-      // prepare transition
-      this._transitionElements.forEach(function(transition) {
-        transition.prepare(this, options);
-      }, this);
-      //
-      // force layout!
-      src.offsetTop;
-
-      //
-      // apply selection
-      this.applySelection(dst, true);
-      this.applySelection(src, false);
-      //
-      // start transition
-      this._transitionElements.forEach(function(transition) {
-        transition.go(this, options);
-      }, this);
-
-      if (!this._transitionElements.length) {
-        this.complete();
-      } else {
-        this.animating = this.async(this.complete.bind(this), null, 5000);
-      }
-    },
-
-    complete: function() {
-      if (this.animating) {
-        this.cancelAsync(this.animating);
-        this.animating = null;
-      }
-
-      this.transitioning.forEach(function(t) {
-        t.removeAttribute('animate');
-      });
-      this.transitioning = [];
-
-      this._transitionElements.forEach(function(transition) {
-        transition.ensureComplete(this);
-      }, this);
-
-      this.fire('core-animated-pages-transition-end');
-    },
-    
-    transitionEnd: function(e) {
-      if (this.transitioning.length) {
-        var completed = true;
-        this._transitionElements.forEach(function(transition) {
-          if (!transition.completed) {
-            completed = false;
-          }
-        });
-        if (completed) {
-          this.job('transitionWatch', function() {
-            this.complete();
-          }, 100);
-        }
-      }
-    },
-
-    selectedChanged: function(old) {
-      this.lastSelected = old;
-      this.super(arguments);
-    },
-
-    selectedItemChanged: function(oldItem) {
-      this.super(arguments);
-
-      if (!oldItem) {
-        this.applySelection(this.selectedItem, true);
-        this.async(this.notifyResize);
-        return;
-      }
-
-      if (this.hasAttribute('no-transition') || !this._transitionElements || !this._transitionElements.length) {
-        this.applySelection(oldItem, false);
-        this.applySelection(this.selectedItem, true);
-        this.notifyResize();
-        return;
-      }
-
-      if (oldItem && this.selectedItem) {
-        // TODO(sorvell): allow bindings to update first?
-        var self = this;
         Polymer.flush();
-        Polymer.endOfMicrotask(function() {
-          self.applyTransition(oldItem, self.selectedItem);
-          self.notifyResize();
-        });
-      }
+
+        if (this.transitioning.indexOf(src) === -1) {
+            this.transitioning.push(src);
+        }
+        if (this.transitioning.indexOf(dst) === -1) {
+            this.transitioning.push(dst);
+        }
+        // force src, dst to display
+        src.setAttribute('animate', '');
+        dst.setAttribute('animate', '');
+        //
+        var options = {
+            src: src,
+            dst: dst,
+            easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+        };
+
+        // fire an event so clients have a chance to do something when the
+        // new page becomes visible but before it draws.
+        this.fire('core-animated-pages-transition-prepare');
+
+        //
+        // prepare transition
+        this._transitionElements.forEach(function (transition) {
+            transition.prepare(this, options);
+        }, this);
+        //
+        // force layout!
+        src.offsetTop;
+
+        //
+        // apply selection
+        this.applySelection(dst, true);
+        this.applySelection(src, false);
+        //
+        // start transition
+        this._transitionElements.forEach(function (transition) {
+            transition.go(this, options);
+        }, this);
+
+        if (!this._transitionElements.length) {
+            this.complete();
+        } else {
+            this.animating = this.async(this.complete.bind(this), null, 5000);
+        }
     },
 
-    resizerShouldNotify: function(el) {
-      // Only notify descendents of selected item
-      while (el && (el != this)) {
-        if (el == this.selectedItem) {
-          return true;
+    complete: function () {
+        if (this.animating) {
+            this.cancelAsync(this.animating);
+            this.animating = null;
         }
-        el = el.parentElement || (el.parentNode && el.parentNode.host);
-      }
+
+        this.transitioning.forEach(function (t) {
+            t.removeAttribute('animate');
+        });
+        this.transitioning = [];
+
+        this._transitionElements.forEach(function (transition) {
+            transition.ensureComplete(this);
+        }, this);
+
+        this.fire('core-animated-pages-transition-end');
+    },
+
+    transitionEnd: function (e) {
+        if (this.transitioning.length) {
+            var completed = true;
+            this._transitionElements.forEach(function (transition) {
+                if (!transition.completed) {
+                    completed = false;
+                }
+            });
+            if (completed) {
+                this.job('transitionWatch', function () {
+                    this.complete();
+                }, 100);
+            }
+        }
+    },
+
+    selectedChanged: function (old) {
+        this.lastSelected = old;
+        this.super(arguments);
+    },
+
+    selectedItemChanged: function (oldItem) {
+        this.super(arguments);
+
+        if (!oldItem) {
+            this.applySelection(this.selectedItem, true);
+            this.async(this.notifyResize);
+            return;
+        }
+
+        if (this.hasAttribute('no-transition') || !this._transitionElements || !this._transitionElements.length) {
+            this.applySelection(oldItem, false);
+            this.applySelection(this.selectedItem, true);
+            this.notifyResize();
+            return;
+        }
+
+        if (oldItem && this.selectedItem) {
+            // TODO(sorvell): allow bindings to update first?
+            var self = this;
+            Polymer.flush();
+            Polymer.endOfMicrotask(function () {
+                self.applyTransition(oldItem, self.selectedItem);
+                self.notifyResize();
+            });
+        }
+    },
+
+    resizerShouldNotify: function (el) {
+        // Only notify descendents of selected item
+        while (el && (el != this)) {
+            if (el == this.selectedItem) {
+                return true;
+            }
+            el = el.parentElement || (el.parentNode && el.parentNode.host);
+        }
     }
 
-  }, Polymer.CoreResizer));
+}, Polymer.CoreResizer));
 

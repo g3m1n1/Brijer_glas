@@ -1,27 +1,26 @@
-
-    (function() {
-      var p = {
+(function () {
+    var p = {
 
         eventDelegates: {
-          down: 'downAction',
-          up: 'upAction'
+            down: 'downAction',
+            up: 'upAction'
         },
 
-        downAction: function() {
-          // call overriden event delegate
-          this._downAction();
-          console.log('down');
+        downAction: function () {
+            // call overriden event delegate
+            this._downAction();
+            console.log('down');
         },
 
-        upAction: function() {
-          // call overriden event delegate
-          this._upAction();
-          console.log('up');
+        upAction: function () {
+            // call overriden event delegate
+            this._upAction();
+            console.log('up');
         }
 
-      };
+    };
 
-      Polymer.mixin2(p, Polymer.CoreFocusable);
-      Polymer(p);
-    })();
+    Polymer.mixin2(p, Polymer.CoreFocusable);
+    Polymer(p);
+})();
   

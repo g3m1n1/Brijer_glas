@@ -98,13 +98,18 @@ Available transitions
 @extends core-transition
 @status beta
 @homepage github.io
---><html><head><link rel="import" href="core-transition.html">
+-->
+<html>
+<head>
+    <link rel="import" href="core-transition.html">
 
-</head><body><polymer-element name="core-transition-css" extends="core-transition" attributes="transitionType">
-<template>
-  <link no-shim="" rel="stylesheet" href="core-transition-overlay.css">
-</template>
-<script src="core-transition-css.html.0.js"></script>
+</head>
+<body>
+<polymer-element name="core-transition-css" extends="core-transition" attributes="transitionType">
+    <template>
+        <link no-shim="" rel="stylesheet" href="core-transition-overlay.css">
+    </template>
+    <script src="core-transition-css.html.0.js"></script>
 </polymer-element>
 
 <core-transition-css id="core-transition-fade"></core-transition-css>
@@ -113,4 +118,5 @@ Available transitions
 <core-transition-css id="core-transition-bottom" transitiontype="bottom"></core-transition-css>
 <core-transition-css id="core-transition-left" transitiontype="left"></core-transition-css>
 <core-transition-css id="core-transition-right" transitiontype="right"></core-transition-css>
-</body></html>
+</body>
+</html>

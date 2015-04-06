@@ -1,17 +1,10 @@
+Polymer('navigation-item', {
 
 
-    Polymer('navigation-item',{
+    navItem: function () {
+        navigate(this.pagename, this.pageid);
+    }
 
-      
-      
-      navItem: function(){
-       navigate(this.pagename, this.pageid);
-      }
-      
-      
-      
-      
-      
-      
-    });
+
+});
 

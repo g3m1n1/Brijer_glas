@@ -71,31 +71,41 @@ To position the drawer to the right, add `rightDrawer` attribute.
 @group Polymer Core Elements
 @element core-drawer-panel
 @homepage github.io
---><html><head><link rel="import" href="../core-media-query/core-media-query.html">
-<link rel="import" href="../core-selector/core-selector.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../core-media-query/core-media-query.html">
+    <link rel="import" href="../core-selector/core-selector.html">
 
-</head><body><polymer-element name="core-drawer-panel" touch-action="auto">
-<template>
+</head>
+<body>
+<polymer-element name="core-drawer-panel" touch-action="auto">
+    <template>
 
-  <link rel="stylesheet" href="core-drawer-panel.css">
+        <link rel="stylesheet" href="core-drawer-panel.css">
 
-  <core-media-query query="max-width: {{forceNarrow ? '' : responsiveWidth}}" querymatches="{{queryMatches}}"></core-media-query>
+        <core-media-query query="max-width: {{forceNarrow ? '' : responsiveWidth}}"
+                          querymatches="{{queryMatches}}"></core-media-query>
 
-  <core-selector class="{{ {'narrow-layout' : narrow, transition : transition, dragging : dragging, 'right-drawer': rightDrawer} | tokenList }}" valueattr="id" selected="{{selected}}">
+        <core-selector
+                class="{{ {'narrow-layout' : narrow, transition : transition, dragging : dragging, 'right-drawer': rightDrawer} | tokenList }}"
+                valueattr="id" selected="{{selected}}">
 
-    <div id="main" _style="left: {{ narrow || rightDrawer ? '0' : drawerWidth }}; right: {{ rightDrawer ? (narrow ? '' : drawerWidth) : '' }};">
-      <content select="[main]"></content>
-      <div id="scrim" on-tap="{{togglePanel}}"></div>
-      <div id="edgeSwipeOverlay" hidden?="{{!narrow || disableEdgeSwipe}}"></div>
-    </div>
+            <div id="main"
+                 _style="left: {{ narrow || rightDrawer ? '0' : drawerWidth }}; right: {{ rightDrawer ? (narrow ? '' : drawerWidth) : '' }};">
+                <content select="[main]"></content>
+                <div id="scrim" on-tap="{{togglePanel}}"></div>
+                <div id="edgeSwipeOverlay" hidden?="{{!narrow || disableEdgeSwipe}}"></div>
+            </div>
 
-    <div id="drawer" _style="width: {{ drawerWidth }}">
-      <content select="[drawer]"></content>
-    </div>
+            <div id="drawer" _style="width: {{ drawerWidth }}">
+                <content select="[drawer]"></content>
+            </div>
 
-  </core-selector>
+        </core-selector>
 
-</template>
-<script src="core-drawer-panel.html.0.js"></script>
+    </template>
+    <script src="core-drawer-panel.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

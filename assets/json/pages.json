@@ -1,7 +1,14 @@
 {
-  "pages":[
-    {"id": 0, "name": "Thuis", "url": "#thuis"},
-    {"id": 1, "name": "Contact", "url": "#contact"}
+  "pages": [
+    {
+      "id": 0,
+      "name": "Thuis",
+      "url": "#thuis"
+    },
+    {
+      "id": 1,
+      "name": "Contact",
+      "url": "#contact"
+    }
   ]
-  
 }

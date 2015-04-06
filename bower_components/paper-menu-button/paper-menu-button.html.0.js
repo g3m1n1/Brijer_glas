@@ -1,15 +1,13 @@
-
-
-  Polymer({
+Polymer({
 
     overlayListeners: {
-      'core-overlay-open': 'openAction',
-      'core-activate': 'activateAction'
+        'core-overlay-open': 'openAction',
+        'core-activate': 'activateAction'
     },
 
-    activateAction: function() {
-      this.opened = false;
+    activateAction: function () {
+        this.opened = false;
     }
 
-  });
+});
 

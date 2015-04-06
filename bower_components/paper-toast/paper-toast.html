@@ -76,31 +76,39 @@ Fired when the `paper-toast` has completely opened.
 Fired when the `paper-toast` has completely closed.
 
 @event core-overlay-close-completed
---><html><head><link rel="import" href="../core-overlay/core-overlay.html">
-<link rel="import" href="../core-transition/core-transition-css.html">
-<link rel="import" href="../core-media-query/core-media-query.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../core-overlay/core-overlay.html">
+    <link rel="import" href="../core-transition/core-transition-css.html">
+    <link rel="import" href="../core-media-query/core-media-query.html">
 
-</head><body><polymer-element name="paper-toast" attributes="text duration opened responsiveWidth swipeDisabled autoCloseDisabled" role="status">
+</head>
+<body>
+<polymer-element name="paper-toast" attributes="text duration opened responsiveWidth swipeDisabled autoCloseDisabled"
+                 role="status">
 
-<template>
+    <template>
 
-  <link rel="stylesheet" href="paper-toast.css">
+        <link rel="stylesheet" href="paper-toast.css">
 
-  <core-overlay id="overlay" autofocusdisabled="" autoclosedisabled="{{autoCloseDisabled}}" opened="{{opened}}" target="{{}}" transition="core-transition-bottom"></core-overlay>
+        <core-overlay id="overlay" autofocusdisabled="" autoclosedisabled="{{autoCloseDisabled}}" opened="{{opened}}"
+                      target="{{}}" transition="core-transition-bottom"></core-overlay>
 
-  <div class="toast-container" horizontal="" layout="">
+        <div class="toast-container" horizontal="" layout="">
 
-    <div class="toast-text" flex="">{{text}}</div>
-    
-    <div class="toast-text toast-action" on-tap="{{dismiss}}">
-      <content></content>
-    </div>
+            <div class="toast-text" flex="">{{text}}</div>
 
-  </div>
-  
-  <core-media-query query="max-width: {{responsiveWidth}}" querymatches="{{narrowMode}}"></core-media-query>
+            <div class="toast-text toast-action" on-tap="{{dismiss}}">
+                <content></content>
+            </div>
 
-</template>
-<script src="paper-toast.html.0.js"></script>
+        </div>
+
+        <core-media-query query="max-width: {{responsiveWidth}}" querymatches="{{narrowMode}}"></core-media-query>
+
+    </template>
+    <script src="paper-toast.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

@@ -6,26 +6,29 @@
     The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
     Code distributed by Google as part of the polymer project is also
     subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8">
-  <title>Core A11y Keys demo</title>
-  <script src="../webcomponentsjs/webcomponents.js"></script>
-  <link rel="import" href="core-a11y-keys.html">
-  <style>
-    div {
-      height: 100px;
-      width: 100px;
-      background: gray;
-    }
-  </style>
+--><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Core A11y Keys demo</title>
+    <script src="../webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="core-a11y-keys.html">
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background: gray;
+        }
+    </style>
 </head>
 <body>
-  <template is="auto-binding">
+<template is="auto-binding">
     <span>Press any of these keys: {{keys}}</span>
     <core-a11y-keys id="a11y" keys="{{keys}}" on-keys-pressed="{{print}}"></core-a11y-keys>
     <pre id="output"></pre>
-  </template>
-  <script src="demo.html.0.js"></script>
+</template>
+<script src="demo.html.0.js"></script>
 
 
-</body></html>
+</body>
+</html>

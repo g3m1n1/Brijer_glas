@@ -1,15 +1,13 @@
-
-
-  Polymer({
+Polymer({
 
     publish: {
-      transition: 'paper-dropdown-transition'
+        transition: 'paper-dropdown-transition'
     },
 
-    ready: function() {
-      this.super();
-      this.sizingTarget = this.$.scroller;
+    ready: function () {
+        this.super();
+        this.sizingTarget = this.$.scroller;
     }
 
-  });
+});
 

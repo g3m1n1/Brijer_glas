@@ -77,34 +77,46 @@ To change the ink ripple color:
 @extends core-selector
 @mixins Polymer.CoreResizable https://github.com/polymer/core-resizable
 @homepage github.io
---><html><head><link rel="import" href="../core-selector/core-selector.html">
-<link rel="import" href="../paper-icon-button/paper-icon-button.html">
-<link rel="import" href="../core-resizable/core-resizable.html">
-<link rel="import" href="paper-tab.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../core-selector/core-selector.html">
+    <link rel="import" href="../paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="../core-resizable/core-resizable.html">
+    <link rel="import" href="paper-tab.html">
 
-</head><body><polymer-element name="paper-tabs" extends="core-selector" attributes="noink nobar noslide scrollable hideScrollButton alignBottom" role="tablist" horizontal="" center="" layout="">
-<template>
+</head>
+<body>
+<polymer-element name="paper-tabs" extends="core-selector"
+                 attributes="noink nobar noslide scrollable hideScrollButton alignBottom" role="tablist" horizontal=""
+                 center="" layout="">
+    <template>
 
-  <link rel="stylesheet" href="paper-tabs.css">
-  
-  <div class="scroll-button" hidden?="{{!scrollable || hideScrollButton}}">
-    <paper-icon-button icon="chevron-left" class="{{ {hidden: leftHidden} | tokenList }}" on-down="{{holdLeft}}" on-up="{{releaseHold}}"></paper-icon-button>
-  </div>
-  
-  <div id="tabsContainer" class="{{ {scrollable: scrollable} | tokenList }}" flex="" on-scroll="{{scroll}}" on-trackstart="{{trackStart}}">
-  
-    <div id="tabsContent" horizontal="" layout?="{{!scrollable}}">
-      <shadow></shadow>
-      <div id="selectionBar" hidden?="{{nobar}}" class="{{ {alignBottom: alignBottom} | tokenList }}" on-transitionend="{{barTransitionEnd}}"></div>
-    </div>
-    
-  </div>
-  
-  <div class="scroll-button" hidden?="{{!scrollable || hideScrollButton}}">
-    <paper-icon-button icon="chevron-right" class="{{ {hidden: rightHidden} | tokenList }}" on-down="{{holdRight}}" on-up="{{releaseHold}}"></paper-icon-button>
-  </div>
-    
-</template>
-<script src="paper-tabs.html.0.js"></script>
+        <link rel="stylesheet" href="paper-tabs.css">
+
+        <div class="scroll-button" hidden?="{{!scrollable || hideScrollButton}}">
+            <paper-icon-button icon="chevron-left" class="{{ {hidden: leftHidden} | tokenList }}" on-down="{{holdLeft}}"
+                               on-up="{{releaseHold}}"></paper-icon-button>
+        </div>
+
+        <div id="tabsContainer" class="{{ {scrollable: scrollable} | tokenList }}" flex="" on-scroll="{{scroll}}"
+             on-trackstart="{{trackStart}}">
+
+            <div id="tabsContent" horizontal="" layout?="{{!scrollable}}">
+                <shadow></shadow>
+                <div id="selectionBar" hidden?="{{nobar}}" class="{{ {alignBottom: alignBottom} | tokenList }}"
+                     on-transitionend="{{barTransitionEnd}}"></div>
+            </div>
+
+        </div>
+
+        <div class="scroll-button" hidden?="{{!scrollable || hideScrollButton}}">
+            <paper-icon-button icon="chevron-right" class="{{ {hidden: rightHidden} | tokenList }}"
+                               on-down="{{holdRight}}" on-up="{{releaseHold}}"></paper-icon-button>
+        </div>
+
+    </template>
+    <script src="paper-tabs.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

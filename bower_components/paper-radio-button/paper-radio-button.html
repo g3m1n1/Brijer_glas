@@ -50,28 +50,36 @@ To change the radio unchecked color:
 @group Paper Elements
 @element paper-radio-button
 @homepage github.io
---><html><head><link rel="import" href="../paper-ripple/paper-ripple.html">
-<link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../paper-ripple/paper-ripple.html">
+    <link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
 
-</head><body><polymer-element name="paper-radio-button" role="radio" tabindex="0" aria-checked="false">
-<template>
+</head>
+<body>
+<polymer-element name="paper-radio-button" role="radio" tabindex="0" aria-checked="false">
+    <template>
 
-  <link rel="stylesheet" href="paper-radio-button.css">
+        <link rel="stylesheet" href="paper-radio-button.css">
 
-  <core-a11y-keys target="{{}}" keys="space" on-keys-pressed="{{tap}}"></core-a11y-keys>
-  
-  <div id="radioContainer" class="{{ {labeled: label} | tokenList }}">
-  
-    <div id="offRadio"></div>
-    <div id="onRadio"></div>
-    
-    <paper-ripple id="ink" class="circle recenteringTouch" checked?="{{!checked}}"></paper-ripple>
-    
-  </div>
-  
-  <div id="radioLabel" aria-hidden="true" hidden?="{{!label}}">{{label}}<content></content></div>
-  
-</template>
-<script src="paper-radio-button.html.0.js"></script>
+        <core-a11y-keys target="{{}}" keys="space" on-keys-pressed="{{tap}}"></core-a11y-keys>
+
+        <div id="radioContainer" class="{{ {labeled: label} | tokenList }}">
+
+            <div id="offRadio"></div>
+            <div id="onRadio"></div>
+
+            <paper-ripple id="ink" class="circle recenteringTouch" checked?="{{!checked}}"></paper-ripple>
+
+        </div>
+
+        <div id="radioLabel" aria-hidden="true" hidden?="{{!label}}">{{label}}
+            <content></content>
+        </div>
+
+    </template>
+    <script src="paper-radio-button.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

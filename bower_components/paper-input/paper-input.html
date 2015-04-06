@@ -42,28 +42,36 @@ Use `paper-input-decorator` if you would like to implement validation.
 @group Paper Elements
 @element paper-input
 @homepage github.io
---><html><head><link href="../polymer/polymer.html" rel="import">
-<link href="../core-input/core-input.html" rel="import">
+-->
+<html>
+<head>
+    <link href="../polymer/polymer.html" rel="import">
+    <link href="../core-input/core-input.html" rel="import">
 
-<link href="paper-input-decorator.html" rel="import">
+    <link href="paper-input-decorator.html" rel="import">
 
-</head><body><polymer-element name="paper-input">
+</head>
+<body>
+<polymer-element name="paper-input">
 
-<template>
+    <template>
 
-  <style>
-    :host {
-      display: inline-block;
-    }
-  </style>
+        <style>
+            :host {
+                display: inline-block;
+            }
+        </style>
 
-  <paper-input-decorator id="decorator" label="{{label}}" floatinglabel="{{floatingLabel}}" value="{{value}}" disabled?="{{disabled}}">
-    <input is="core-input" id="input" value="{{value}}" committedvalue="{{committedValue}}" on-change="{{changeAction}}" disabled?="{{disabled}}">
-  </paper-input-decorator>
+        <paper-input-decorator id="decorator" label="{{label}}" floatinglabel="{{floatingLabel}}" value="{{value}}"
+                               disabled?="{{disabled}}">
+            <input is="core-input" id="input" value="{{value}}" committedvalue="{{committedValue}}"
+                   on-change="{{changeAction}}" disabled?="{{disabled}}">
+        </paper-input-decorator>
 
-</template>
+    </template>
 
-<script src="paper-input.html.0.js"></script>
+    <script src="paper-input.html.0.js"></script>
 
 </polymer-element>
-</body></html>
+</body>
+</html>

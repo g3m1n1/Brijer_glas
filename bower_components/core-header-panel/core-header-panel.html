@@ -62,30 +62,36 @@ Use `mode` to control the header and scrolling behavior.
 @group Polymer Core Elements
 @element core-header-panel
 @homepage github.io
---><html><head><link rel="import" href="../polymer/polymer.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../polymer/polymer.html">
 
-</head><body><polymer-element name="core-header-panel">
-<template>
+</head>
+<body>
+<polymer-element name="core-header-panel">
+    <template>
 
-  <link rel="stylesheet" href="core-header-panel.css">
+        <link rel="stylesheet" href="core-header-panel.css">
 
-  <div id="outerContainer" vertical="" layout="">
+        <div id="outerContainer" vertical="" layout="">
 
-    <content id="headerContent" select="core-toolbar, .core-header"></content>
+            <content id="headerContent" select="core-toolbar, .core-header"></content>
 
-    <div id="mainPanel" flex="" vertical="" layout="">
+            <div id="mainPanel" flex="" vertical="" layout="">
 
-      <div id="mainContainer" flex?="{{mode !== 'cover'}}">
-        <content id="mainContent" select="*"></content>
-      </div>
+                <div id="mainContainer" flex?="{{mode !== 'cover'}}">
+                    <content id="mainContent" select="*"></content>
+                </div>
 
-      <div id="dropShadow"></div>
+                <div id="dropShadow"></div>
 
-    </div>
+            </div>
 
-  </div>
+        </div>
 
-</template>
-<script src="core-header-panel.html.0.js"></script>
+    </template>
+    <script src="core-header-panel.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

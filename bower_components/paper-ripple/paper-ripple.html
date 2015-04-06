@@ -61,61 +61,67 @@ animation finishes to perform some action.
 @event core-transitionend
 @param {Object} detail
 @param {Object} detail.node The animated node
---><html><head><link rel="import" href="../polymer/polymer.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../polymer/polymer.html">
 
-</head><body><polymer-element name="paper-ripple" attributes="initialOpacity opacityDecayVelocity">
-<template>
+</head>
+<body>
+<polymer-element name="paper-ripple" attributes="initialOpacity opacityDecayVelocity">
+    <template>
 
-  <style>
+        <style>
 
-    :host {
-      display: block;
-      position: relative;
-      border-radius: inherit;
-      overflow: hidden;
-    }
+            :host {
+                display: block;
+                position: relative;
+                border-radius: inherit;
+                overflow: hidden;
+            }
 
-    :host-context([noink]) {
-      pointer-events: none;
-    }
+            :host-context([noink]) {
+                pointer-events: none;
+            }
 
-    #bg, #waves, .wave-container, .wave {
-      pointer-events: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+            #bg, #waves, .wave-container, .wave {
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
 
-    #bg, .wave {
-      opacity: 0;
-    }
+            #bg, .wave {
+                opacity: 0;
+            }
 
-    #waves, .wave {
-      overflow: hidden;
-    }
+            #waves, .wave {
+                overflow: hidden;
+            }
 
-    .wave-container, .wave {
-      border-radius: 50%;
-    }
+            .wave-container, .wave {
+                border-radius: 50%;
+            }
 
-    :host(.circle) #bg,
-    :host(.circle) #waves {
-      border-radius: 50%;
-    }
+            :host(.circle) #bg,
+            :host(.circle) #waves {
+                border-radius: 50%;
+            }
 
-    :host(.circle) .wave-container {
-      overflow: hidden;
-    }
+            :host(.circle) .wave-container {
+                overflow: hidden;
+            }
 
-  </style>
+        </style>
 
-  <div id="bg"></div>
-  <div id="waves">
-  </div>
+        <div id="bg"></div>
+        <div id="waves">
+        </div>
 
-</template>
-<script src="paper-ripple.html.0.js"></script>
+    </template>
+    <script src="paper-ripple.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

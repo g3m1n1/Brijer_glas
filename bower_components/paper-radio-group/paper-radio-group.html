@@ -26,35 +26,44 @@ information about `paper-radio-button`.
 @element paper-radio-group
 @extends core-selector
 @homepage github.io
---><html><head><link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
-<link rel="import" href="../core-selector/core-selector.html">
-<link rel="import" href="../paper-radio-button/paper-radio-button.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
+    <link rel="import" href="../core-selector/core-selector.html">
+    <link rel="import" href="../paper-radio-button/paper-radio-button.html">
 
-</head><body><polymer-element name="paper-radio-group" extends="core-selector" role="radiogroup">
+</head>
+<body>
+<polymer-element name="paper-radio-group" extends="core-selector" role="radiogroup">
 
-  <template>
+    <template>
 
-    <core-a11y-keys target="{{}}" keys="up left" on-keys-pressed="{{selectPrevious}}"></core-a11y-keys>
-    <core-a11y-keys target="{{}}" keys="down right" on-keys-pressed="{{selectNext}}"></core-a11y-keys>
-  
-    <style>
-    
-      :host {
-        display: inline-block;
-      }
-  
-      polyfill-next-selector { content: ':host > *'; }
-      ::content > * {
-        padding: 12px;
-      }
-    
-    </style>
-  
-    <shadow></shadow>
-    
-  </template>
-  
-  <script src="paper-radio-group.html.0.js"></script>
-  
+        <core-a11y-keys target="{{}}" keys="up left" on-keys-pressed="{{selectPrevious}}"></core-a11y-keys>
+        <core-a11y-keys target="{{}}" keys="down right" on-keys-pressed="{{selectNext}}"></core-a11y-keys>
+
+        <style>
+
+            :host {
+                display: inline-block;
+            }
+
+            polyfill-next-selector {
+                content: ':host > *';
+            }
+
+            ::content > * {
+                padding: 12px;
+            }
+
+        </style>
+
+        <shadow></shadow>
+
+    </template>
+
+    <script src="paper-radio-group.html.0.js"></script>
+
 </polymer-element>
-</body></html>
+</body>
+</html>

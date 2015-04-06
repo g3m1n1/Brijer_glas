@@ -45,24 +45,31 @@ To change the progress bar background color:
 @element paper-progress
 @extends core-range
 @homepage github.io
---><html><head><link rel="import" href="../core-range/core-range.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../core-range/core-range.html">
 
-</head><body><polymer-element name="paper-progress" extends="core-range" attributes="secondaryProgress indeterminate">
+</head>
+<body>
+<polymer-element name="paper-progress" extends="core-range" attributes="secondaryProgress indeterminate">
 
-  <template>
-  
-    <link rel="stylesheet" href="paper-progress.css">
-  
-    <div id="progressContainer" role="progressbar" aria-valuenow="{{value}}" aria-valuemin="{{min}}" aria-valuemax="{{max}}">
-    
-      <div id="secondaryProgress" fit=""></div>
-      <div id="activeProgress" fit=""></div>
-      
-    </div>
-    
-  </template>
-  
-  <script src="paper-progress.html.0.js"></script>
-  
+    <template>
+
+        <link rel="stylesheet" href="paper-progress.css">
+
+        <div id="progressContainer" role="progressbar" aria-valuenow="{{value}}" aria-valuemin="{{min}}"
+             aria-valuemax="{{max}}">
+
+            <div id="secondaryProgress" fit=""></div>
+            <div id="activeProgress" fit=""></div>
+
+        </div>
+
+    </template>
+
+    <script src="paper-progress.html.0.js"></script>
+
 </polymer-element>
-</body></html>
+</body>
+</html>

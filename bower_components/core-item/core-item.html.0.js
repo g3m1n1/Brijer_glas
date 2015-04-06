@@ -1,7 +1,5 @@
+Polymer('core-item', {
 
-
-  Polymer('core-item', {
-    
     /**
      * The URL of an image for the icon.
      *
@@ -26,5 +24,5 @@
      * @default ''
      */
 
-  });
+});
 

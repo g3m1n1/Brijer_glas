@@ -17,33 +17,33 @@ var cheerioOptions = {xmlMode: true};
 var files = process.argv.slice(2);
 
 function read(file) {
-  var content = fs.readFileSync(file, 'utf8');
-  return cheerio.load(content, cheerioOptions);
+    var content = fs.readFileSync(file, 'utf8');
+    return cheerio.load(content, cheerioOptions);
 }
 
 function transmogrify($, name) {
-  var node = $('svg');
-  // remove spacer rectangles
-  node.find('[fill=none]').remove();
-  // remove empty groups
-  var innerHTML = $.xml(node.children());
-  // add parent group with icon name as id
-  var output = '<g id="' + name + '">' + innerHTML + '</g>';
-  // print icon svg
-  console.log(output);
+    var node = $('svg');
+    // remove spacer rectangles
+    node.find('[fill=none]').remove();
+    // remove empty groups
+    var innerHTML = $.xml(node.children());
+    // add parent group with icon name as id
+    var output = '<g id="' + name + '">' + innerHTML + '</g>';
+    // print icon svg
+    console.log(output);
 }
 
 function path2IconName(file) {
-  parts = path.basename(file).split('_');
-  // remove ic_
-  parts.shift();
-  // remove _24px.svg
-  parts.pop();
-  return parts.join('-');
+    parts = path.basename(file).split('_');
+    // remove ic_
+    parts.shift();
+    // remove _24px.svg
+    parts.pop();
+    return parts.join('-');
 }
 
-files.forEach(function(file) {
-  var name = path2IconName(file);
-  var $ = read(file);
-  transmogrify($, name);
+files.forEach(function (file) {
+    var name = path2IconName(file);
+    var $ = read(file);
+    transmogrify($, name);
 });

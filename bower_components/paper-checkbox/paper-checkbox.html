@@ -49,27 +49,35 @@ To change the checkbox unchecked color:
 @element paper-checkbox
 @extends paper-radio-button
 @homepage github.io
---><html><head><link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../paper-radio-button/paper-radio-button.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../polymer/polymer.html">
+    <link rel="import" href="../paper-radio-button/paper-radio-button.html">
 
-</head><body><polymer-element name="paper-checkbox" extends="paper-radio-button" role="checkbox">
-  <template>
+</head>
+<body>
+<polymer-element name="paper-checkbox" extends="paper-radio-button" role="checkbox">
+    <template>
 
-    <link rel="stylesheet" href="paper-checkbox.css">
+        <link rel="stylesheet" href="paper-checkbox.css">
 
-    <div id="checkboxContainer" class="{{ {labeled: label} | tokenList }}">
+        <div id="checkboxContainer" class="{{ {labeled: label} | tokenList }}">
 
-      <paper-ripple id="ink" class="circle recenteringTouch" checked?="{{!checked}}"></paper-ripple>
+            <paper-ripple id="ink" class="circle recenteringTouch" checked?="{{!checked}}"></paper-ripple>
 
-      <div id="checkbox" class="{{ {checked: checked} | tokenList }}">
-        <div id="checkmark" class="{{ {hidden: !checked} | tokenList }}"></div>
-      </div>
+            <div id="checkbox" class="{{ {checked: checked} | tokenList }}">
+                <div id="checkmark" class="{{ {hidden: !checked} | tokenList }}"></div>
+            </div>
 
-    </div>
+        </div>
 
-    <div id="checkboxLabel" hidden?="{{!label}}">{{label}}<content></content></div>
+        <div id="checkboxLabel" hidden?="{{!label}}">{{label}}
+            <content></content>
+        </div>
 
-  </template>
-  <script src="paper-checkbox.html.0.js"></script>
+    </template>
+    <script src="paper-checkbox.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

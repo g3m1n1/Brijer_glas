@@ -30,34 +30,43 @@ Example:
 @element paper-menu-button
 @extends core-dropdown-base
 @status unstable
---><html><head><link href="../polymer/polymer.html" rel="import">
-<link href="../core-a11y-keys/core-a11y-keys.html" rel="import">
-<link href="../core-dropdown/core-dropdown-base.html" rel="import">
+-->
+<html>
+<head>
+    <link href="../polymer/polymer.html" rel="import">
+    <link href="../core-a11y-keys/core-a11y-keys.html" rel="import">
+    <link href="../core-dropdown/core-dropdown-base.html" rel="import">
 
-</head><body><polymer-element name="paper-menu-button" extends="core-dropdown-base" relative="">
-<template>
+</head>
+<body>
+<polymer-element name="paper-menu-button" extends="core-dropdown-base" relative="">
+    <template>
 
-  <style>
-    :host {
-      display: inline-block;
-    }
+        <style>
+            :host {
+                display: inline-block;
+            }
 
-    :host([disabled]) {
-      pointer-events: none;
-      color: #a8a8a8;
-    }
+            :host([disabled]) {
+                pointer-events: none;
+                color: #a8a8a8;
+            }
 
-    polyfill-next-selector { content: ':host([disabled]) *'; }
-    :host([disabled]) ::content * {
-      pointer-events: none;
-    }
-  </style>
+            polyfill-next-selector {
+                content: ':host([disabled]) *';
+            }
 
-  <core-a11y-keys target="{{}}" keys="enter space" on-keys-pressed="{{toggleOverlay}}"></core-a11y-keys>
+            :host([disabled]) ::content * {
+                pointer-events: none;
+            }
+        </style>
 
-  <content></content>
+        <core-a11y-keys target="{{}}" keys="enter space" on-keys-pressed="{{toggleOverlay}}"></core-a11y-keys>
 
-</template>
-<script src="paper-menu-button.html.0.js"></script>
+        <content></content>
+
+    </template>
+    <script src="paper-menu-button.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

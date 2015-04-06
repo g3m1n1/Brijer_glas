@@ -1,10 +1,9 @@
-
-    Polymer({
-      eventDelegates: {
+Polymer({
+    eventDelegates: {
         'animationend': 'reset',
         'webkitAnimationEnd': 'reset'
-      },
-      publish: {
+    },
+    publish: {
         /**
          * Displays the spinner.
          *
@@ -23,42 +22,42 @@
          * @default 'loading'
          */
         alt: {value: 'loading', reflect: true}
-      },
+    },
 
-      ready: function() {
+    ready: function () {
         // Allow user-provided `aria-label` take preference to any other text alternative.
         if (this.hasAttribute('aria-label')) {
-          this.alt = this.getAttribute('aria-label');
+            this.alt = this.getAttribute('aria-label');
         } else {
-          this.setAttribute('aria-label', this.alt);
+            this.setAttribute('aria-label', this.alt);
         }
         if (!this.active) {
-          this.setAttribute('aria-hidden', 'true');
+            this.setAttribute('aria-hidden', 'true');
         }
-      },
+    },
 
-      activeChanged: function() {
+    activeChanged: function () {
         if (this.active) {
-          this.$.spinnerContainer.classList.remove('cooldown');
-          this.$.spinnerContainer.classList.add('active');
-          this.removeAttribute('aria-hidden');
+            this.$.spinnerContainer.classList.remove('cooldown');
+            this.$.spinnerContainer.classList.add('active');
+            this.removeAttribute('aria-hidden');
         } else {
-          this.$.spinnerContainer.classList.add('cooldown');
-          this.setAttribute('aria-hidden', 'true');
+            this.$.spinnerContainer.classList.add('cooldown');
+            this.setAttribute('aria-hidden', 'true');
         }
-      },
+    },
 
-      altChanged: function() {
+    altChanged: function () {
         if (this.alt === '') {
-          this.setAttribute('aria-hidden', 'true');
+            this.setAttribute('aria-hidden', 'true');
         } else {
-          this.removeAttribute('aria-hidden');
+            this.removeAttribute('aria-hidden');
         }
         this.setAttribute('aria-label', this.alt);
-      },
+    },
 
-      reset: function() {
+    reset: function () {
         this.$.spinnerContainer.classList.remove('active', 'cooldown');
-      }
-    });
+    }
+});
   

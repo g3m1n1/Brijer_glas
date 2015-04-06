@@ -77,18 +77,24 @@ not scroll with its container.
 @element core-dropdown
 @extends core-overlay
 @homepage github.io
---><html><head><link href="../polymer/polymer.html" rel="import">
-<link href="../core-overlay/core-overlay.html" rel="import">
+-->
+<html>
+<head>
+    <link href="../polymer/polymer.html" rel="import">
+    <link href="../core-overlay/core-overlay.html" rel="import">
 
-<style shim-shadowdom="">
-  html /deep/ core-dropdown {
-    position: absolute;
-    overflow: auto;
-    background-color: #fff;
-  }
-</style>
+    <style shim-shadowdom="">
+        html /deep/ core-dropdown {
+            position: absolute;
+            overflow: auto;
+            background-color: #fff;
+        }
+    </style>
 
-</head><body><polymer-element name="core-dropdown" extends="core-overlay">
-<script src="core-dropdown.html.0.js"></script>
+</head>
+<body>
+<polymer-element name="core-dropdown" extends="core-overlay">
+    <script src="core-dropdown.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

@@ -55,16 +55,23 @@ Fired when an item element is tapped.
 @event core-activate
 @param {Object} detail
   @param {Object} detail.item the item element
---><html><head><link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../core-selection/core-selection.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../polymer/polymer.html">
+    <link rel="import" href="../core-selection/core-selection.html">
 
-</head><body><polymer-element name="core-selector" attributes="selected multi valueattr selectedClass selectedProperty selectedAttribute selectedItem selectedModel selectedIndex notap excludedLocalNames target itemsSelector activateEvent">
+</head>
+<body>
+<polymer-element name="core-selector"
+                 attributes="selected multi valueattr selectedClass selectedProperty selectedAttribute selectedItem selectedModel selectedIndex notap excludedLocalNames target itemsSelector activateEvent">
 
-  <template>
-    <core-selection id="selection" multi="{{multi}}" on-core-select="{{selectionSelect}}"></core-selection>
-    <content id="items" select="*"></content>
-  </template>
+    <template>
+        <core-selection id="selection" multi="{{multi}}" on-core-select="{{selectionSelect}}"></core-selection>
+        <content id="items" select="*"></content>
+    </template>
 
-  <script src="core-selector.html.0.js"></script>
+    <script src="core-selector.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

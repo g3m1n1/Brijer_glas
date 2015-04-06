@@ -52,27 +52,34 @@ To change the toggle bar and toggle button colors separately:
 @group Paper Elements
 @element paper-toggle-button
 @homepage github.io
---><html><head><link rel="import" href="../paper-radio-button/paper-radio-button.html">
-<link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../paper-radio-button/paper-radio-button.html">
+    <link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
 
-</head><body><polymer-element name="paper-toggle-button" attributes="checked disabled" role="button" aria-pressed="false" tabindex="0">
-<template>
+</head>
+<body>
+<polymer-element name="paper-toggle-button" attributes="checked disabled" role="button" aria-pressed="false"
+                 tabindex="0">
+    <template>
 
-  <link rel="stylesheet" href="paper-toggle-button.css">
+        <link rel="stylesheet" href="paper-toggle-button.css">
 
-  <core-a11y-keys target="{{}}" keys="space" on-keys-pressed="{{tap}}"></core-a11y-keys>
+        <core-a11y-keys target="{{}}" keys="space" on-keys-pressed="{{tap}}"></core-a11y-keys>
 
-  <div id="toggleContainer" checked?="{{checked}}" disabled?="{{disabled}}">
-  
-    <div id="toggleBar" class="toggle toggle-bar"></div>
+        <div id="toggleContainer" checked?="{{checked}}" disabled?="{{disabled}}">
 
-    <div id="toggleButton" class="toggle toggle-button">
-      <paper-ripple id="ink" class="toggle-ink circle"></paper-ripple>
-    </div>
+            <div id="toggleBar" class="toggle toggle-bar"></div>
 
-  </div>
+            <div id="toggleButton" class="toggle toggle-button">
+                <paper-ripple id="ink" class="toggle-ink circle"></paper-ripple>
+            </div>
 
-</template>
-<script src="paper-toggle-button.html.0.js"></script>
+        </div>
+
+    </template>
+    <script src="paper-toggle-button.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

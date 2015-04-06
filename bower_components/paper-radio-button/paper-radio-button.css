@@ -8,101 +8,101 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 :host {
-  display: inline-block;
-  white-space: nowrap;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 :host(:focus) {
-  outline: none;
+    outline: none;
 }
 
 #radioContainer {
-  position: relative;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
 }
 
 #radioContainer.labeled {
-  display: inline-block;
-  vertical-align: middle;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 #ink {
-  position: absolute;
-  top: -16px;
-  left: -16px;
-  width: 48px;
-  height: 48px;
-  color: #5a5a5a;
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    width: 48px;
+    height: 48px;
+    color: #5a5a5a;
 }
 
 #ink[checked] {
-  color: #0f9d58;
+    color: #0f9d58;
 }
 
 #offRadio {
-  position: absolute;
-  top: 0px;
-  left: 0px; 
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: solid 2px;
-  border-color: #5a5a5a;
-  transition: border-color 0.28s;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: solid 2px;
+    border-color: #5a5a5a;
+    transition: border-color 0.28s;
 }
 
 :host([checked]) #offRadio {
-  border-color: #009688;
+    border-color: #009688;
 }
 
 #onRadio {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #009688;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  transition: -webkit-transform ease 0.28s;
-  transition: transform ease 0.28s;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #009688;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    transition: -webkit-transform ease 0.28s;
+    transition: transform ease 0.28s;
 }
 
 :host([checked]) #onRadio {
-  -webkit-transform: scale(1);
-  transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 #radioLabel {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 10px;
-  white-space: normal;
-  pointer-events: none;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    white-space: normal;
+    pointer-events: none;
 }
 
 #radioLabel[hidden] {
-  display: none;
+    display: none;
 }
 
 /* disabled state */
 :host([disabled]) {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 :host([disabled]) #offRadio,
 :host([disabled]) #onRadio {
-  opacity: 0.33;
+    opacity: 0.33;
 }
 
 :host([disabled]) #offRadio {
-  border-color: #5a5a5a;
+    border-color: #5a5a5a;
 }
 
 :host([disabled][checked]) #onRadio {
-  background-color: #5a5a5a;
+    background-color: #5a5a5a;
 }

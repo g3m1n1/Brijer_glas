@@ -56,72 +56,78 @@ you should ensure that the `aria-label` attribute is set.
 @element paper-fab
 @extends paper-button-base
 @status unstable
---><html><head><link href="../polymer/polymer.html" rel="import">
-<link href="../core-icon/core-icon.html" rel="import">
-<link href="../paper-button/paper-button-base.html" rel="import">
-<link href="../paper-ripple/paper-ripple.html" rel="import">
-<link href="../paper-shadow/paper-shadow.html" rel="import">
+-->
+<html>
+<head>
+    <link href="../polymer/polymer.html" rel="import">
+    <link href="../core-icon/core-icon.html" rel="import">
+    <link href="../paper-button/paper-button-base.html" rel="import">
+    <link href="../paper-ripple/paper-ripple.html" rel="import">
+    <link href="../paper-shadow/paper-shadow.html" rel="import">
 
-</head><body><polymer-element name="paper-fab" extends="paper-button-base" attributes="src icon mini" role="button">
+</head>
+<body>
+<polymer-element name="paper-fab" extends="paper-button-base" attributes="src icon mini" role="button">
 
-  <template>
+    <template>
 
-    <style>
-      :host {
-        display: inline-block;
-        position: relative;
-        outline: none;
-        -webkit-user-select: none;
-        user-select: none;
-        cursor: pointer;
-        z-index: 0;
+        <style>
+            :host {
+                display: inline-block;
+                position: relative;
+                outline: none;
+                -webkit-user-select: none;
+                user-select: none;
+                cursor: pointer;
+                z-index: 0;
 
-        box-sizing: border-box;
-        width: 56px;
-        height: 56px;
-        background: #d23f31;
-        color: #fff;
-        border-radius: 50%;
-        padding: 16px;
-      }
+                box-sizing: border-box;
+                width: 56px;
+                height: 56px;
+                background: #d23f31;
+                color: #fff;
+                border-radius: 50%;
+                padding: 16px;
+            }
 
-      :host([mini]) {
-        width: 40px;
-        height: 40px;
-        padding: 8px;
-      }
+            :host([mini]) {
+                width: 40px;
+                height: 40px;
+                padding: 8px;
+            }
 
-      :host([disabled]) {
-        color: #c9c9c9;
-        pointer-events: none;
-        cursor: auto;
-      }
+            :host([disabled]) {
+                color: #c9c9c9;
+                pointer-events: none;
+                cursor: auto;
+            }
 
-      #ripple {
-        pointer-events: none;
-        z-index: -1;
-      }
+            #ripple {
+                pointer-events: none;
+                z-index: -1;
+            }
 
-      #shadow {
-        border-radius: inherit;
-        pointer-events: none;
-      }
+            #shadow {
+                border-radius: inherit;
+                pointer-events: none;
+            }
 
-      #icon {
-        display: block;
-        pointer-events: none;
-      }
-    </style>
+            #icon {
+                display: block;
+                pointer-events: none;
+            }
+        </style>
 
-    <template if="{{raised}}">
-      <paper-shadow id="shadow" fit="" animated=""></paper-shadow>
+        <template if="{{raised}}">
+            <paper-shadow id="shadow" fit="" animated=""></paper-shadow>
+        </template>
+
+        <!-- to position to ripple behind the icon -->
+        <core-icon relative="" id="icon" src="{{src}}" icon="{{icon}}"></core-icon>
+
     </template>
 
-    <!-- to position to ripple behind the icon -->
-    <core-icon relative="" id="icon" src="{{src}}" icon="{{icon}}"></core-icon>
-
-  </template>
-
-  <script src="paper-fab.html.0.js"></script>
+    <script src="paper-fab.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

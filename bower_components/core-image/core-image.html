@@ -56,19 +56,25 @@ Examples:
 @group Polymer Core Elements
 @element core-image
 @homepage github.io
---><html><head><link rel="import" href="../polymer/polymer.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../polymer/polymer.html">
 
-</head><body><polymer-element name="core-image">
-<template>
-  <link rel="stylesheet" href="core-image.css">
-  <template if="{{!sizing}}">
-    <img id="img">
-  </template>
-  <template if="{{preload &amp;&amp; fade}}">
-    <div id="placeholder" fit=""></div>
-  </template>
-  <content></content>
-</template>
-<script src="core-image.html.0.js"></script>
+</head>
+<body>
+<polymer-element name="core-image">
+    <template>
+        <link rel="stylesheet" href="core-image.css">
+        <template if="{{!sizing}}">
+            <img id="img">
+        </template>
+        <template if="{{preload &amp;&amp; fade}}">
+            <div id="placeholder" fit=""></div>
+        </template>
+        <content></content>
+    </template>
+    <script src="core-image.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>

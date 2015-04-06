@@ -1,2 +1,1 @@
-
-  CoreStyle.g.columns = 3;
+CoreStyle.g.columns = 3;

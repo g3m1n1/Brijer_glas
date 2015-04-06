@@ -1,7 +1,6 @@
+Polymer({
 
-    Polymer({
-
-      publish: {
+    publish: {
 
         /**
          * The URL of an image for the icon. If the src property is specified,
@@ -27,15 +26,15 @@
         recenteringTouch: true,
         fill: false
 
-      },
+    },
 
-      iconChanged: function(oldIcon) {
+    iconChanged: function (oldIcon) {
         var label = this.getAttribute('aria-label');
         if (!label || label === oldIcon) {
-          this.setAttribute('aria-label', this.icon);
+            this.setAttribute('aria-label', this.icon);
         }
-      }
+    }
 
-    });
+});
 
   

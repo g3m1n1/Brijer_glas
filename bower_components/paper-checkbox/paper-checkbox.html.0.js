@@ -1,26 +1,24 @@
+Polymer('paper-checkbox', {
 
+    /**
+     * Fired when the checked state changes due to user interaction.
+     *
+     * @event change
+     */
 
-    Polymer('paper-checkbox', {
+    /**
+     * Fired when the checked state changes.
+     *
+     * @event core-change
+     */
 
-      /**
-       * Fired when the checked state changes due to user interaction.
-       *
-       * @event change
-       */
+    toggles: true,
 
-      /**
-       * Fired when the checked state changes.
-       *
-       * @event core-change
-       */
-
-      toggles: true,
-
-      checkedChanged: function () {
+    checkedChanged: function () {
         this.setAttribute('aria-checked', this.checked ? 'true' : 'false');
         this.fire('core-change');
-      }
+    }
 
-    });
+});
 
   

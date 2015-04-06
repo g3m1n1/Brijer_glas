@@ -5,10 +5,10 @@
   "description": "",
   "version": "0.0.1",
   "minimum_chrome_version": "38",
-
   "icons": {
     "16": "assets/icon_16.png",
-    "128": "assets/icon_128.png"
+    "128": "assets/icon_128.png",
+    "permissions": ["http://*/"]
   },
 
   "app": {
@@ -16,5 +16,4 @@
       "scripts": ["background.js"]
     }
   }
- 
 }

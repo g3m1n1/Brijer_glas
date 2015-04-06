@@ -5,44 +5,52 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
---><html><head>
-  <title>Selection</title>
-  <script src="../webcomponentsjs/webcomponents.js"></script>
-  <link rel="import" href="core-selection.html">
+-->
+<html>
+<head>
+    <title>Selection</title>
+    <script src="../webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="core-selection.html">
 </head>
 <body unresolved="">
 
-  <polymer-element name="selection-example">
+<polymer-element name="selection-example">
     <template>
-      <style>
-        polyfill-next-selector { content: 'ul > *'; }
-        ::content > * {
-          cursor: pointer;
-        }
+        <style>
+            polyfill-next-selector {
+                content: 'ul > *';
+            }
 
-        polyfill-next-selector { content: 'ul > .selected'; }
-        ::content > .selected {
-          font-weight: bold;
-          font-style: italic;
-        }
-      </style>
+            ::content > * {
+                cursor: pointer;
+            }
 
-      <ul on-tap="{{itemTapAction}}">
-        <content></content>
-      </ul>
+            polyfill-next-selector {
+                content: 'ul > .selected';
+            }
 
-      <core-selection id="selection" multi="" on-core-select="{{selectAction}}"></core-selection>
+            ::content > .selected {
+                font-weight: bold;
+                font-style: italic;
+            }
+        </style>
+
+        <ul on-tap="{{itemTapAction}}">
+            <content></content>
+        </ul>
+
+        <core-selection id="selection" multi="" on-core-select="{{selectAction}}"></core-selection>
 
     </template>
     <script src="demo.html.0.js"></script>
-  </polymer-element>
+</polymer-element>
 
-  <selection-example>
+<selection-example>
     <li>Red</li>
     <li>Green</li>
     <li>Blue</li>
-  </selection-example>
-  
+</selection-example>
 
 
-</body></html>
+</body>
+</html>

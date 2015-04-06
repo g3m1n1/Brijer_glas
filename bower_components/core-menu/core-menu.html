@@ -59,15 +59,15 @@ The `core-select` event signals selection change.
 <link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
 
 <polymer-element name="core-menu" extends="core-selector" noscript>
-<template>
+    <template>
 
-  <link rel="stylesheet" href="core-menu.css">
+        <link rel="stylesheet" href="core-menu.css">
 
-  <core-a11y-keys target="{{}}" keys="up" on-keys-pressed="{{ selectPrevious }}"></core-a11y-keys>
-  <core-a11y-keys target="{{}}" keys="down" on-keys-pressed="{{ selectNext }}"></core-a11y-keys>
-  <core-a11y-keys target="{{}}" keys="enter" on-keys-pressed="{{ validateSelected }}"></core-a11y-keys>
+        <core-a11y-keys target="{{}}" keys="up" on-keys-pressed="{{ selectPrevious }}"></core-a11y-keys>
+        <core-a11y-keys target="{{}}" keys="down" on-keys-pressed="{{ selectNext }}"></core-a11y-keys>
+        <core-a11y-keys target="{{}}" keys="enter" on-keys-pressed="{{ validateSelected }}"></core-a11y-keys>
 
-  <shadow></shadow>
+        <shadow></shadow>
 
-</template>
+    </template>
 </polymer-element>

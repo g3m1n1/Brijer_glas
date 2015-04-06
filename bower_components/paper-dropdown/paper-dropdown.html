@@ -32,67 +32,74 @@ Style the background color of the dropdown with these selectors:
 @element paper-dropdown
 @extends core-dropdown
 @status unstable
---><html><head><link href="../polymer/polymer.html" rel="import">
-<link href="../core-dropdown/core-dropdown.html" rel="import">
-<link href="../paper-shadow/paper-shadow.html" rel="import">
+-->
+<html>
+<head>
+    <link href="../polymer/polymer.html" rel="import">
+    <link href="../core-dropdown/core-dropdown.html" rel="import">
+    <link href="../paper-shadow/paper-shadow.html" rel="import">
 
-<link href="paper-dropdown-transition.html" rel="import">
+    <link href="paper-dropdown-transition.html" rel="import">
 
-<style shim-shadowdom="">
-  html /deep/ paper-dropdown {
-    position: absolute;
-    overflow: visible;
-    min-height: 40px;
-  }
-</style>
+    <style shim-shadowdom="">
+        html /deep/ paper-dropdown {
+            position: absolute;
+            overflow: visible;
+            min-height: 40px;
+        }
+    </style>
 
-</head><body><polymer-element name="paper-dropdown" extends="core-dropdown">
-<template>
+</head>
+<body>
+<polymer-element name="paper-dropdown" extends="core-dropdown">
+    <template>
 
-  <style>
-    #ripple {
-      background-color: #fff;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.26);
-      opacity: 0;
-    }
+        <style>
+            #ripple {
+                background-color: #fff;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.26);
+                opacity: 0;
+            }
 
-    :host([halign=right]) #ripple {
-      left: auto;
-      right: 0;
-    }
+            :host([halign=right]) #ripple {
+                left: auto;
+                right: 0;
+            }
 
-    :host([valign=bottom]) #ripple {
-      top: auto;
-      bottom: 0;
-    }
+            :host([valign=bottom]) #ripple {
+                top: auto;
+                bottom: 0;
+            }
 
-    #background {
-      background-color: #fff;
-      border-radius: inherit;
-    }
+            #background {
+                background-color: #fff;
+                border-radius: inherit;
+            }
 
-    #scroller {
-      overflow: auto;
-      box-sizing: border-box;
-    }
-  </style>
+            #scroller {
+                overflow: auto;
+                box-sizing: border-box;
+            }
+        </style>
 
-  <div id="ripple"></div>
+        <div id="ripple"></div>
 
-  <div id="background" fit="">
-    <paper-shadow fit=""></paper-shadow>
-  </div>
+        <div id="background" fit="">
+            <paper-shadow fit=""></paper-shadow>
+        </div>
 
-  <div id="scroller" relative="">
-    <content></content>
-  </div>
+        <div id="scroller" relative="">
+            <content></content>
+        </div>
 
-</template>
-<script src="paper-dropdown.html.0.js"></script>
-</polymer-element></body></html>
+    </template>
+    <script src="paper-dropdown.html.0.js"></script>
+</polymer-element>
+</body>
+</html>

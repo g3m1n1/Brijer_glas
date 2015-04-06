@@ -60,26 +60,32 @@ on itself or any of its ancestors.
 @group Polymer Core Elements
 @element core-toolbar
 @homepage github.io
---><html><head><link rel="import" href="../polymer/polymer.html">
+-->
+<html>
+<head>
+    <link rel="import" href="../polymer/polymer.html">
 
-</head><body><polymer-element name="core-toolbar" attributes="justify middleJustify bottomJustify">
-<template>
+</head>
+<body>
+<polymer-element name="core-toolbar" attributes="justify middleJustify bottomJustify">
+    <template>
 
-  <link rel="stylesheet" href="core-toolbar.css">
+        <link rel="stylesheet" href="core-toolbar.css">
 
-  <div id="bottomBar" class="toolbar-tools" center="" horizontal="" layout="">
-    <content select=".bottom"></content>
-  </div>
+        <div id="bottomBar" class="toolbar-tools" center="" horizontal="" layout="">
+            <content select=".bottom"></content>
+        </div>
 
-  <div id="middleBar" class="toolbar-tools" center="" horizontal="" layout="">
-    <content select=".middle"></content>
-  </div>
+        <div id="middleBar" class="toolbar-tools" center="" horizontal="" layout="">
+            <content select=".middle"></content>
+        </div>
 
-  <div id="topBar" class="toolbar-tools" center="" horizontal="" layout="">
-    <content></content>
-  </div>
+        <div id="topBar" class="toolbar-tools" center="" horizontal="" layout="">
+            <content></content>
+        </div>
 
-</template>
-<script src="core-toolbar.html.0.js"></script>
+    </template>
+    <script src="core-toolbar.html.0.js"></script>
 </polymer-element>
-</body></html>
+</body>
+</html>
