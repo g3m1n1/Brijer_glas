@@ -1,0 +1,52 @@
+<html><head><link rel="import" href="../bower_components/core-icons/core-icons.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+
+</head><body><polymer-element name="navigation-item" attributes="pagename pageid">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        position: relative;
+        font-size: 16px;
+        box-sizing: border-box;
+        min-width: 7em;
+        outline: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        z-index: 0;
+      }
+
+      :host([disabled]) {
+        color: #a8a8a8;
+        cursor: auto;
+        pointer-events: none;
+      }
+
+      :host(.core-selected) {
+        background-color: #eaeaea;
+      }
+
+      #ripple {
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .button-content {
+        padding: 0.9em 1em;
+      }
+
+   
+    </style>
+    <paper-item on-click="{{navItem}}">
+      <content></content>
+    </paper-item>
+  </template>
+
+  <script src="navigation-item.html.0.js"></script>
+
+</polymer-element>
+</body></html>
